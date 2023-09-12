@@ -15,6 +15,9 @@ class TestStack(unittest.TestCase):
         self.stack.push('data1')
         self.assertEqual(self.stack.pop(), "data1")
 
+    def test_str(self):
+        self.assertEqual(self.stack.__str__(), None)
+
 
 if __name__ == '__main__':
     unittest.main()
