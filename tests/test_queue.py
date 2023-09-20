@@ -14,6 +14,11 @@ class TestQueue(unittest.TestCase):
     def test_str(self):
         self.assertEqual(self.queue.__str__(), "")
 
+    def test_dequeue(self):
+        self.queue.enqueue('data1')
+        self.assertEqual(self.queue.dequeue(), "data1")
+        self.assertNotEqual(self.queue.dequeue(), "data1")
+
 
 if __name__ == '__main__':
     unittest.main()
