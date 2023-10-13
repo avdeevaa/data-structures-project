@@ -19,3 +19,10 @@ class TestLinkedList(unittest.TestCase):
 
     def test_str(self):
         self.assertEqual(self.linked_list.__str__(), "None")
+
+    def test_get_data_by_id(self):
+        self.assertEqual(self.linked_list.get_data_by_id(2),None)
+
+    def test_to_list(self):
+        self.linked_list.insert_beginning({'id': 1})
+        self.assertEqual(self.linked_list.to_list(), [{'id': 1}])
