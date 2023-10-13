@@ -46,3 +46,29 @@ class LinkedList:
 
         ll_string += ' None'
         return ll_string
+
+    def get_data_by_id(self, id):
+        """Возвращает первый найденный словарь с ключом 'id'"""
+        current_node = self.head
+        try:
+            while current_node:
+                data = current_node.data
+                if isinstance(data, dict) and data.get('id') == id:
+                    return data
+                current_node = current_node.next_node
+        except TypeError:
+            print("Неподходящий формат данных")
+
+        #return None
+
+    def to_list(self):
+        """Возвращает список с данными, содержащимися в односвязном списке"""
+        result = []
+        current_node = self.head
+        while current_node:
+            result.append(current_node.data)
+            current_node = current_node.next_node
+        return result
+
+
+
